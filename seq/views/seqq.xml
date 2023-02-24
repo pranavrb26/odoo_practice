@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record id="sequence_form" model="ir.ui.view">
+			<field name="name">Sequence Order</field>
+			<field name="model">sequence.order</field>
+			<field name="arch" type="xml">
+				<form string="Sequence Order">
+					<sheet>
+						<div class="oe_title">
+							<h1>
+								<field name="sequence" readonly="1"/>
+							</h1>
+						</div>
+						<group>
+							<field name="name"/>
+						</group>
+						<group>
+							<notebook>
+								<page string="Country">
+									<field name="country"/>
+								</page>
+							</notebook>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="sequence_tree" model="ir.ui.view">
+			<field name="name">Sequence Order</field>
+			<field name="model">sequence.order</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="sequence" readonly="1"/>
+					<field name="name"/>
+					<field name="country"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="sequence_action" model="ir.actions.act_window">
+			<field name="name">Sequence Order</field>
+			<field name="res_model">sequence.order</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="sequence_menu" name="Sequence Order" action="sequence_action"/>
+		<!-- <menuitem id="sequence_order_menu" name="SQ Order" parent="sequence_menu" action="sequence_action" sequence="2"/> -->
+
+
+		<record id="action_copy_seq" model="ir.actions.server">
+			<field name="name">Copy</field>
+			<field name="model_id" ref="model_sequence_order"/>
+			<field name="binding_model_id" ref="seq.model_sequence_order"/>
+			<field name="binding_view_types">list</field>
+			<field name="state">code</field>
+			<field name="code">action = model.action_copy_seq()</field>
+		</record>
+	</data>
+</odoo>

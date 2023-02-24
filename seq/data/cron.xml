@@ -1,0 +1,16 @@
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="demo_cron" model="ir.cron">
+			<field name="name">demo cron</field>
+			<field name="model_id" ref="model_sequence_order"></field>
+			<field name="state">code</field>
+			<field name="interval_number">1</field>
+			<field name="interval_type">minutes</field>
+			<field name="user_id" ref="base.user_root"/>
+			<field name="numbercall">-1</field>
+			<field name="doall" eval="False"/>
+			<field name="code">model.demo_cron_method()</field>
+		</record>
+	</data>
+</odoo> -->

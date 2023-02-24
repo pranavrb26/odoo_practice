@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<record id="student_marks_form" model="ir.ui.view">
+		<field name="name">Student Marks</field>
+		<field name="model">student.marks</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="name"/>
+					<field name="std"/>
+					<field name="maths"/>
+					<field name="science"/>
+					<field name="social"/>
+					<field name="obtained_marks"/>
+					<field name="total_marks"/>
+					<field name="percentage"/>
+				</group>
+				<notebook>
+					<page string="Responsible admin">
+						<group>
+							<field name="user"/>
+						</group>
+					</page>
+				</notebook>
+			</form>
+		</field>
+	</record>
+
+	<record id="student_marks_tree" model="ir.ui.view">
+		<field name="name">Student Marks</field>
+		<field name="model">student.marks</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="std"/>
+				<field name="maths"/>
+				<field name="science"/>
+				<field name="social"/>
+				<field name="obtained_marks"/>
+				<field name="total_marks"/>
+				<field name="percentage"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_student_marks" model="ir.actions.act_window">
+		<field name="name">Student Marks</field>
+		<field name="res_model">student.marks</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="menu_marks" name="Marks" sequence="4" parent="menu_student_root" action="action_student_marks"/>
+
+</odoo>

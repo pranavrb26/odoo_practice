@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="tmp_data" name="Student data">
+		<t t-call="website.layout">
+			<div class="oe_structure">
+				<div class="container">
+					<br/>
+					<center>
+						<h3>Student data</h3>
+					</center>
+					<br/>
+					<table class="table-striped table">
+						<thead>
+							<tr>
+								<h6>
+									<th>Name</th>
+									<th>Standard</th>
+									<th>Date of birth</th>
+									<th>Gender</th>
+									<th>Address</th>
+								</h6>
+							</tr>
+						</thead>
+						<tbody>
+							<t t-foreach="records" t-as="order">
+								<tr>
+									<td>
+										<span t-esc="order.name"/>
+									</td>
+									<td>
+										<span t-esc="order.std.name"/>
+									</td>
+									<td>
+										<span t-esc="order.dob"/>
+									</td>
+									<td>
+										<t t-if="order.gender=='male'">Male</t>
+										<t t-if="order.gender=='female'">Female</t>
+									</td>
+									<td>
+										<span t-esc="order.address"/>
+									</td>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</t>
+	</template>
+</odoo>

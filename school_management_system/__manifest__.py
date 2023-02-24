@@ -1,0 +1,20 @@
+{
+	'name' : "School Management System",
+	'description' : """School """,
+	'summary' : "school system",
+	'version' : "1.0",
+	"license" : 'LGPL-3',
+	'author' : "school",
+	'depends' : ['base'],
+	'data' : ['security/security.xml',
+			'security/ir.model.access.csv',
+			'views/details.xml',
+			'views/marks.xml',
+			'views/std.xml',
+			'report/st.xml' ,
+			'report/report.xml',
+			'data/seq.xml',
+			'views/tmp_data.xml'],
+	'installable' : True,
+	'application' : True
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+ 
+<!-- 	<template id="report_student_details">
+    	<t t-call="web.external_layout">
+    	</t>
+	</template>
+ -->
+	<template id="report_student">
+	   	<t t-call="web.html_container">
+		   	<t t-foreach="docs" t-as="doc">
+				<div class="article" width="100%">
+	            	<h1 style="text-align:center">Report</h1>
+
+		            <p style="border-bottom:1px solid black"></p>
+		            <br/>
+
+			        <table width="50%">
+		        		<tr>
+	            			<td style="font-weight:bold">Name : </td>
+	            			<td><span t-field="doc.name"></span></td>
+	            		</tr>
+	            		<!-- <tr>
+	            			<td style="font-weight:bold">Birthdate : </td>
+	            			<td><span t-field="doc.dob"></span></td>
+	            		</tr>
+	            		<tr>
+	            			<td style="font-weight:bold">Address : </td>
+	            			<td><span t-field="doc.address"></span></td>
+	            		</tr>
+	            		<tr>
+	            			<td style="font-weight:bold">Gender : </td>
+	            			<td><t t-if="doc.gender=='male'">Male</t>
+				    		 	<t t-if="doc.gender=='female'">Female</t></td>
+	            		</tr> -->
+	            		<tr>
+	            			<td style="font-weight:bold">Standard : </td>
+	            			<td><span t-field="doc.std"></span></td>
+	            		</tr>
+	            	</table>
+	            	<br/>
+
+	            	<h4>Marks</h4>
+	            	<table class="table table-bordered" width="60%">
+	            		<tbody style="2px solid black">
+		            		<tr>
+		            			<td>Maths : </td>
+		            			<td><span t-field="doc.maths"></span></td>
+		            		</tr>
+		            		<tr>
+		            			<td>Science : </td>
+		            			<td><span t-field="doc.science"></span></td>
+		            		</tr>
+		            		<tr>
+		            			<td>Social science : </td>
+		            			<td><span t-field="doc.social"></span></td>
+		            		</tr>
+		            		<tr>
+		            			<td>Obtained marks : </td>
+		            			<td><span t-field="doc.obtained_marks"></span></td>
+		            		</tr>
+		            		<tr>
+		            			<td>Total marks : </td>
+		            			<td><span t-field="doc.total_marks"></span></td>
+		            		</tr>
+		            		<tr>
+		            			<td>Percentage : </td>
+		            			<td><span t-field="doc.percentage"></span></td>
+		            		</tr>
+		            	</tbody>
+	            	</table>
+
+	<!-- 	            <table>
+		                Name : <t t-esc="doc.name"/><br/>
+					    Birthdate : <t t-esc="doc.dob"/><br/>
+					    Address : <t t-esc="doc.address"/><br/>
+					    Gender : <t t-if="doc.gender=='male'">Male</t>
+					    		 <t t-if="doc.gender=='female'">Female</t><br/>
+					    Standard : <t t-esc="doc.std.name"/><br/>
+					    Maths : <t t-esc="doc.maths"/><br/>
+					    Science : <t t-esc="doc.science"/><br/>
+					    Social Science : <t t-esc="doc.social"/><br/>
+					    Obtained Marks : <t t-esc="doc.obtained_marks"/><br/>
+					    Total Marks : <t t-esc="doc.total_marks"/><br/>
+					    Percentage : <t t-esc="'%.2f'% doc.percentage"/><br/>
+					</table> -->
+
+				</div>
+	       	</t>
+	    </t>
+	</template>
+
+</odoo>
